@@ -1,0 +1,150 @@
+#steezenumber{
+  position: absolute;
+  top: 25%;
+  left: 41%;
+  width: 18%;
+}
+
+#plus-button{
+	position: absolute;
+	top: 31%;
+	left: 62.5%;
+	width: 8%;
+}
+
+#minus-button{
+	position: absolute;
+	top: 31.3%;
+	left: 74%;
+	width: 8%;
+}
+
+#flipnumber{
+  position: absolute;
+  top: 6.4%;
+  left: 49.05%;
+  width: 13%;
+}
+
+#fplus-button{
+	position: absolute;
+	top: 6.4%;
+	left: 62.5%;
+	width: 8%;
+}
+
+#fminus-button{
+	position: absolute;
+	top: 6.5%;
+	left: 74%;
+	width: 8%;
+}
+
+#spinnumber{
+  position: absolute;
+  top: 29.5%;
+  left: 49.05%;
+  width: 13%;
+}
+
+#splus-button{
+	position: absolute;
+	top: 29.5%;
+	left: 62.5%;
+	width: 8%;
+}
+
+#sminus-button{
+	position: absolute;
+	top: 29.6%;
+	left: 74%;
+	width: 8%;
+}
+
+#catchnumber{
+  position: absolute;
+  top: 52.7%;
+  left: 49.05%;
+  width: 13%;
+}
+
+#cplus-button{
+	position: absolute;
+	top: 52.7%;
+	left: 62.5%;
+	width: 8%;
+}
+
+#cminus-button{
+	position: absolute;
+	top: 52.8%;
+	left: 74%;
+	width: 8%;
+}
+
+#grabnumber{
+  position: absolute;
+  top: 75.9%;
+  left: 49.05%;
+  width: 13%;
+}
+
+#gplus-button{
+	position: absolute;
+	top: 75.9%;
+	left: 62.5%;
+	width: 8%;
+}
+
+#gminus-button{
+	position: absolute;
+	top: 76%;
+	left: 74%;
+	width: 8%;
+}
+
+#letterS{
+  position: absolute;
+  top: 21.5%;
+  left: 15.5%;
+  width: 17.5%;
+}
+
+#letterK{
+  position: absolute;
+  top: 21.5%;
+  left: 31.5%;
+  width: 13.4%;
+}
+
+#letterA{
+  position: absolute;
+  top: 21.5%;
+  left: 43.5%;
+  width: 13.4%;
+}
+
+#letterT{
+  position: absolute;
+  top: 21.5%;
+  left: 55.5%;
+  width: 13.4%;
+}
+
+#letterE{
+  position: absolute;
+  top: 21.5%;
+  left: 67%;
+  width: 17.5%;
+}
+
+#main{
+  background-image: url('../images/TGOS-Tracker-BG.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+body{
+	margin:0;
+	background-color: black;
+}

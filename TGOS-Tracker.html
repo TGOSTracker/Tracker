@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div id="main" style="position: relative; margin:0 auto; width:100%; max-width:1280px">
+	<div id="header">
+		<img src="images/TGOS-Tracker-Header.png" style="width:100%;">
+	</div>
+
+	<div id="steeze" style="position: relative;">
+		<div id="bgimage">
+			<img src="images/TGOS-Tracker-Steeze.png" style="width: 100%;">
+		</div>
+		
+		<div id="steezenumber" data-value="0">
+			<img src="images/0.png" style="width: 100%;">
+		</div>
+		
+		<div id="plus-button" ontouchstart="SteezePlus()" onmousedown="SteezePlus()">
+			<img src="images/plus.png" style="width:100%;">
+		</div>
+		
+		<div id="minus-button" onmousedown="SteezeMinus()" ontouchstart="SteezeMinus()">
+			<img src="images/minus.png" style="width:100%;">
+		</div>
+	</div>
+	
+	<div id="dicepool" style="position:relative;">
+		<div id="bgimage2">
+			<img src="images/TGOS-Tracker-DicePool.png" style="width: 100%;">
+		</div>
+		
+		<div id="flipnumber" data-value="0">
+			<img src="images/0.png" style="width: 100%;">
+		</div>
+		
+		<div id="fplus-button" ontouchstart="FlipPlus()" onmousedown="FlipPlus()">
+			<img src="images/plus.png" style="width:100%;">
+		</div>
+		
+		<div id="fminus-button" onmousedown="FlipMinus()" ontouchstart="FlipMinus()">
+			<img src="images/minus.png" style="width:100%;">
+		</div>
+		
+		<div id="spinnumber" data-value="0">
+			<img src="images/0.png" style="width: 100%;">
+		</div>
+		
+		<div id="splus-button" ontouchstart="SpinPlus()" onmousedown="SpinPlus()">
+			<img src="images/plus.png" style="width:100%;">
+		</div>
+		
+		<div id="sminus-button" onmousedown="SpinMinus()" ontouchstart="SpinMinus()">
+			<img src="images/minus.png" style="width:100%;">
+		</div>
+		
+		<div id="catchnumber" data-value="0">
+			<img src="images/0.png" style="width: 100%;">
+		</div>
+		
+		<div id="cplus-button" ontouchstart="CatchPlus()" onmousedown="CatchPlus()">
+			<img src="images/plus.png" style="width:100%;">
+		</div>
+		
+		<div id="cminus-button" onmousedown="CatchMinus()" ontouchstart="CatchMinus()">
+			<img src="images/minus.png" style="width:100%;">
+		</div>
+		
+		<div id="grabnumber" data-value="0">
+			<img src="images/0.png" style="width: 100%;">
+		</div>
+		
+		<div id="gplus-button" ontouchstart="GrabPlus()" onmousedown="GrabPlus()">
+			<img src="images/plus.png" style="width:100%;">
+		</div>
+		
+		<div id="gminus-button" onmousedown="GrabMinus()" ontouchstart="GrabMinus()">
+			<img src="images/minus.png" style="width:100%;">
+		</div>
+	</div>
+	
+	<div id="skateletters" style="position:relative;">
+		<div id="bgimage3">
+			<img src="images/TGOS-Tracker-SkateBG.png" style="width: 100%;">
+		</div>
+		
+		<div id="letterS" ontouchstart="toggleLetterS()" onmousedown="toggleLetterS()" data-value="0">
+			<img src="images/letter_S0.png" style="width:100%;">
+		</div>
+		
+		<div id="letterK" ontouchstart="toggleLetterK()" onmousedown="toggleLetterK()" data-value="0">
+			<img src="images/letter_K0.png" style="width:100%;">
+		</div>
+		
+		<div id="letterA" ontouchstart="toggleLetterA()" onmousedown="toggleLetterA()" data-value="0">
+			<img src="images/letter_A0.png" style="width:100%;">
+		</div>
+		
+		<div id="letterT" ontouchstart="toggleLetterT()" onmousedown="toggleLetterT()" data-value="0">
+			<img src="images/letter_T0.png" style="width:100%;">
+		</div>
+		
+		<div id="letterE" ontouchstart="toggleLetterE()" onmousedown="toggleLetterE()" data-value="0">
+			<img src="images/letter_E0.png" style="width:100%;">
+		</div>
+		
+	</div>
+
+</div>
+<script>
+
+/*STEEZE FUNCTIONS */
+function SteezePlus() {
+	var x = document.getElementById("steezenumber").getAttribute('data-value');
+	if (x==12){
+	 x=0;
+	}else{
+	 x++;
+	}
+	document.getElementById("steezenumber").setAttribute('data-value', x);
+	document.getElementById("steezenumber").innerHTML = '<img src="images/'+x+'.png" style="width: 100%;">';
+	document.getElementById("plus-button").innerHTML = '<img src="images/plus-on.png" style="width:100%;">';
+	setTimeout(function(){document.getElementById("plus-button").innerHTML = '<img src="images/plus.png" style="width:100%;">';},400);
+	event.preventDefault();	
+}
+
+function SteezeMinus() {
+	var x = document.getElementById("steezenumber").getAttribute('data-value');
+	if(x==0){
+	 x=12;
+	}else{
+	x--;
+	}
+	document.getElementById("steezenumber").setAttribute('data-value', x);
+	document.getElementById("steezenumber").innerHTML = '<img src="images/'+x+'.png" style="width: 100%;">';
+	document.getElementById("minus-button").innerHTML = '<img src="images/minus-on.png" style="width:100%;">';
+	setTimeout(function(){document.getElementById("minus-button").innerHTML = '<img src="images/minus.png" style="width:100%;">';},400);
+	event.preventDefault();
+}
+
+/*FLIP FUNCTIONS*/
+function FlipPlus() {
+	var x = document.getElementById("flipnumber").getAttribute('data-value');
+	if (x==9){
+	 x=0;
+	}else{
+	 x++;
+	}
+	document.getElementById("flipnumber").setAttribute('data-value', x);
+	document.getElementById("flipnumber").innerHTML = '<img src="images/'+x+'.png" style="width: 100%;">';
+	document.getElementById("fplus-button").innerHTML = '<img src="images/plus-on.png" style="width:100%;">';
+	setTimeout(function(){document.getElementById("fplus-button").innerHTML = '<img src="images/plus.png" style="width:100%;">';},400);
+	event.preventDefault();	
+}
+
+function FlipMinus() {
+	var x = document.getElementById("flipnumber").getAttribute('data-value');
+	if(x==0){
+	 x=9;
+	}else{
+	x--;
+	}
+	document.getElementById("flipnumber").setAttribute('data-value', x);
+	document.getElementById("flipnumber").innerHTML = '<img src="images/'+x+'.png" style="width: 100%;">';
+	document.getElementById("fminus-button").innerHTML = '<img src="images/minus-on.png" style="width:100%;">';
+	setTimeout(function(){document.getElementById("fminus-button").innerHTML = '<img src="images/minus.png" style="width:100%;">';},400);
+	event.preventDefault();
+}
+
+/*SPIN FUNCTIONS */
+function SpinPlus() {
+	var x = document.getElementById("spinnumber").getAttribute('data-value');
+	if (x==9){
+	 x=0;
+	}else{
+	 x++;
+	}
+	document.getElementById("spinnumber").setAttribute('data-value', x);
+	document.getElementById("spinnumber").innerHTML = '<img src="images/'+x+'.png" style="width: 100%;">';
+	document.getElementById("splus-button").innerHTML = '<img src="images/plus-on.png" style="width:100%;">';
+	setTimeout(function(){document.getElementById("splus-button").innerHTML = '<img src="images/plus.png" style="width:100%;">';},400);
+	event.preventDefault();	
+}
+
+function SpinMinus() {
+	var x = document.getElementById("spinnumber").getAttribute('data-value');
+	if(x==0){
+	 x=9;
+	}else{
+	x--;
+	}
+	document.getElementById("spinnumber").setAttribute('data-value', x);
+	document.getElementById("spinnumber").innerHTML = '<img src="images/'+x+'.png" style="width: 100%;">';
+	document.getElementById("sminus-button").innerHTML = '<img src="images/minus-on.png" style="width:100%;">';
+	setTimeout(function(){document.getElementById("sminus-button").innerHTML = '<img src="images/minus.png" style="width:100%;">';},400);
+	event.preventDefault();
+}
+
+/*CATCH FUNCTIONS */
+function CatchPlus() {
+	var x = document.getElementById("catchnumber").getAttribute('data-value');
+	if (x==9){
+	 x=0;
+	}else{
+	 x++;
+	}
+	document.getElementById("catchnumber").setAttribute('data-value', x);
+	document.getElementById("catchnumber").innerHTML = '<img src="images/'+x+'.png" style="width: 100%;">';
+	document.getElementById("cplus-button").innerHTML = '<img src="images/plus-on.png" style="width:100%;">';
+	setTimeout(function(){document.getElementById("cplus-button").innerHTML = '<img src="images/plus.png" style="width:100%;">';},400);
+	event.preventDefault();	
+}
+
+function CatchMinus() {
+	var x = document.getElementById("catchnumber").getAttribute('data-value');
+	if(x==0){
+	 x=9;
+	}else{
+	x--;
+	}
+	document.getElementById("catchnumber").setAttribute('data-value', x);
+	document.getElementById("catchnumber").innerHTML = '<img src="images/'+x+'.png" style="width: 100%;">';
+	document.getElementById("cminus-button").innerHTML = '<img src="images/minus-on.png" style="width:100%;">';
+	setTimeout(function(){document.getElementById("cminus-button").innerHTML = '<img src="images/minus.png" style="width:100%;">';},400);
+	event.preventDefault();
+}
+
+/*GRAB FUNCTIONS */
+function GrabPlus() {
+	var x = document.getElementById("grabnumber").getAttribute('data-value');
+	if (x==9){
+	 x=0;
+	}else{
+	 x++;
+	}
+	document.getElementById("grabnumber").setAttribute('data-value', x);
+	document.getElementById("grabnumber").innerHTML = '<img src="images/'+x+'.png" style="width: 100%;">';
+	document.getElementById("gplus-button").innerHTML = '<img src="images/plus-on.png" style="width:100%;">';
+	setTimeout(function(){document.getElementById("gplus-button").innerHTML = '<img src="images/plus.png" style="width:100%;">';},400);
+	event.preventDefault();	
+}
+
+function GrabMinus() {
+	var x = document.getElementById("grabnumber").getAttribute('data-value');
+	if(x==0){
+	 x=9;
+	}else{
+	x--;
+	}
+	document.getElementById("grabnumber").setAttribute('data-value', x);
+	document.getElementById("grabnumber").innerHTML = '<img src="images/'+x+'.png" style="width: 100%;">';
+	document.getElementById("gminus-button").innerHTML = '<img src="images/minus-on.png" style="width:100%;">';
+	setTimeout(function(){document.getElementById("gminus-button").innerHTML = '<img src="images/minus.png" style="width:100%;">';},400);
+	event.preventDefault();
+}
+
+/*SKATE LETTER FUNCTIONS */
+
+function toggleLetterS() {
+	var x = document.getElementById("letterS").getAttribute('data-value');
+	if (x==0){
+	 x=1;
+	}else{
+	 x=0;
+	}
+	document.getElementById("letterS").setAttribute('data-value', x);
+	document.getElementById("letterS").innerHTML = '<img src="images/letter_S'+x+'.png" style="width:100%;">';
+	event.preventDefault();	
+}
+
+function toggleLetterK() {
+	var x = document.getElementById("letterK").getAttribute('data-value');
+	if (x==0){
+	 x=1;
+	}else{
+	 x=0;
+	}
+	document.getElementById("letterK").setAttribute('data-value', x);
+	document.getElementById("letterK").innerHTML = '<img src="images/letter_K'+x+'.png" style="width:100%;">';
+	event.preventDefault();	
+}
+
+function toggleLetterA() {
+	var x = document.getElementById("letterA").getAttribute('data-value');
+	if (x==0){
+	 x=1;
+	}else{
+	 x=0;
+	}
+	document.getElementById("letterA").setAttribute('data-value', x);
+	document.getElementById("letterA").innerHTML = '<img src="images/letter_A'+x+'.png" style="width:100%;">';
+	event.preventDefault();	
+}
+
+function toggleLetterT() {
+	var x = document.getElementById("letterT").getAttribute('data-value');
+	if (x==0){
+	 x=1;
+	}else{
+	 x=0;
+	}
+	document.getElementById("letterT").setAttribute('data-value', x);
+	document.getElementById("letterT").innerHTML = '<img src="images/letter_T'+x+'.png" style="width:100%;">';
+	event.preventDefault();	
+}
+
+function toggleLetterE() {
+	var x = document.getElementById("letterE").getAttribute('data-value');
+	if (x==0){
+	 x=1;
+	}else{
+	 x=0;
+	}
+	document.getElementById("letterE").setAttribute('data-value', x);
+	document.getElementById("letterE").innerHTML = '<img src="images/letter_E'+x+'.png" style="width:100%;">';
+	event.preventDefault();	
+}
+
+
+</script>
+
+</body>
+</html>
